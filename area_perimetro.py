@@ -1,77 +1,107 @@
+m1="*"
+m2=30
+print(m2*m1)
+print("* Bienvenidos a este programa* \n* que te dejara sin aliento. *")
+print(m2*m1)
+print()
+nombre = input("Antes de inciar, \n ingresa tu nombre ")
+print(f"Hola {nombre} a continuacion ingrese la figura que deseas hacer: ")
+opc =int(input("1. Hexágono\n 2.Triangulo\n 3. Elipse\n 4. Pentágono\n 5. Paralelogramo\n"))
 import math
-# este es para calcular el area y perimetro de un elipse
-def calcular_area_elipse(a, b):
-    area = math.pi * a * b
-    return area
+while True:
+    #Hexágono 
+    if opc == 1:
+        print("Seleccióno el hexágono")
+        print("a. área \n p. perimetro")
+        fig = input("Selecciona la operación que deas hacer: ")
+        if fig == "a":
+            print("Has seleciónado el área del hexágono")
+            lado = float(input("Ingrese la longitud del hexágono: "))
+            area = (3 * math.sqrt(3) * lado**2) / 2
+            print(f"{nombre} El área del hexágono es: {area}")
+        elif fig == "p":
+            print("Has selecciónado el perímetro del hexágono")
+            lado = float(input("Ingresa la longitud de un lado del hexágono: "))
+            perimetro = lado * 6
+            print("El perímetro del hexágono es:", perimetro)
 
-def calcular_perimetro_elipse(a, b):
-    perimetro = 2 * math.pi * math.sqrt((a**2 + b**2) / 2)
-    return perimetro
+        else:
+            print(f"{nombre} La figura que seleccionaste no es valida")
+    #Triangulo
+    elif opc == 2:
+        print("Seleccióno el triangulo")
+        print("a. área \n p. perimetro")
+        fig = input("Selecciona la operación que deas hacer: ")
+        if fig == "a":
+            print("Has seleciónado el área del triangulo")
+            base = float(input("Ingrese la base del triángulo: "))
+            altura = float(input("Ingrese la altura del triángulo: "))
+            area = (base * altura) / 2
+            print(f"{nombre} El área del triangulo es: {area}")
+        elif fig == "p":
+            print("Has selecciónado el perímetro del triangulo")
+            lado1 = float(input("Ingrese la longitud del primer lado: "))
+            lado2 = float(input("Ingrese la longitud del segundo lado: "))
+            lado3 = float(input("Ingrese la longitud del tercer lado: "))
+            perimetro = lado1 + lado2 + lado3
+            print(f"El perímetro del triangulo es: {perimetro}")
+        else:
+            print(f"{nombre} La figura que seleccionaste no es valida")
+    #Elipse
+    elif opc == 3:
+        print("Seleccióno el elipse")
+        print("a. área \n p. perimetro")
+        fig = input("Selecciona la operación que deas hacer: ")
+        if fig == "a":
+            print("Has seleciónado el área del elipse")
+            a = float(input("Ingrese el valor del semieje mayor (a): "))
+            b = float(input("Ingrese el valor del semieje menor (b): "))
+            area = math.pi * a * b
+            print(f"{nombre} El área del elipse es: {area}")
+        elif fig == "p":
+            print("Has selecciónado el perímetro del elipse")
+            a = float(input("Ingrese el valor del semieje mayor (a): "))
+            b = float(input("Ingrese el valor del semieje menor (b): "))
+            perimetro = 2 * math.pi * math.sqrt((a**2 + b**2) / 2)
+            print(f"El perímetro del elipse es: {perimetro}")
 
-semieje_mayor = int(input('Ingrese el semieje mayor: '))
-semieje_menor = int(input('Ingrese el semieje memor: '))
+        else:
+            print(f"{nombre} La figura que seleccionaste no es valida")
+    elif opc == 4:
+        print("Seleccióno el pentágono")
+        print("a. área \n p. perimetro")
+        fig = input("Selecciona la operación que deas hacer: ")
+        if fig == "a":
+            print("Has seleciónado el área del pentágono")
+            lado = float(input("Ingrese la longitud del lado del pentágono: "))
+            apotema = float(input("Ingrese la apotema del pentágono: "))
+            area = (5 * lado * apotema) / 2
+            print(f"{nombre} El área del pentágono es: {area}")
+        elif fig == "p":
+            print("Has selecciónado el perímetro del pentágono")
+            lado = float(input("Ingrese la longitud del lado del pentágono: "))
 
-area = calcular_area_elipse(semieje_mayor, semieje_menor)
-perimetro = calcular_perimetro_elipse(semieje_mayor, semieje_menor)
+            perimetro = 5 * lado
+            print(f"El perímetro del pentágono es: {perimetro}")
 
-print("El área de la elipse es:", area)
-print("El perímetro de la elipse es:", perimetro)
+        else:
+            print(f"{nombre} La figura que seleccionaste no es valida")
+    elif opc == 5:
+        print("Seleccióno el paralelogramo")
+        print("a. área \n p. perimetro")
+        fig = input("Selecciona la operación que deas hacer: ")
+        if fig == "a":
+            print("Has seleciónado el área del paralelogramo")
+            base = float(input("Ingrese la longitud de la base del paralelogramo: "))
+            altura = float(input("Ingrese la altura del paralelogramo: "))
+            area = base * altura
+            print(f"{nombre} El área del paralelogramo es: {area}")
+        elif fig == "p":
+            print("Has selecciónado el perímetro del paralelogramo")
+            lado1 = float(input("Ingrese la longitud del primer lado: "))
+            lado2 = float(input("Ingrese la longitud del segundo lado: "))
+            perimetro = 2 * (lado1 + lado2)
+            print(f"El perímetro del paralelogramo es: {perimetro}")
 
-#como hallar el area y perimetro de un hexágono
-
-
-lado = float(input("Ingrese la longitud de un lado del hexágono: "))
-
-area = (3 * math.sqrt(3) * lado**2) / 2
-perimetro = lado * 6
-
-print("El área del hexágono es:", area)
-print("El perímetro del hexágono es:", perimetro)
-
-
-
-# pentágono
-
-lado = float(input("Ingresa la medida de un lado del pentágono: "))
-
-perimetro = 5 * lado
-apotema = lado / (2 * math.tan(math.pi/5))
-area = (perimetro * apotema) / 2
-
-print("El perímetro del pentágono es: ", perimetro)
-print("El área del pentágono es: ", area)
-
-#paralelogramo
-
-def calcular_paralelogramo(base, altura, lado): 
-    perimetro = 2 * lado + base 
-    area = base * altura 
-    return perimetro, area 
- 
-base = float(input("Ingresa la medida de la base del paralelogramo: ")) 
-altura = float(input("Ingresa la medida de la altura del paralelogramo: ")) 
-lado = float(input("Ingresa la medida de uno de los lados del paralelogramo: ")) 
- 
-perimetro, area = calcular_paralelogramo(base, altura, lado) 
- 
-print("El perímetro del paralelogramo es:", perimetro) 
-print("El área del paralelogramo es:", area)
-
-#trisngulo
-def calcular_perimetro(base, lado):
-    perimetro = 2 * lado + base
-    return perimetro
-
-def calcular_area(base, altura):
-    area = base * altura
-    return area
-
-base = float(input("Ingresa la medida de la base del paralelogramo: "))
-altura = float(input("Ingresa la medida de la altura del paralelogramo: "))
-lado = float(input("Ingresa la medida de uno de los lados del paralelogramo: "))
-
-perimetro = calcular_perimetro(base, lado)
-area = calcular_area(base, altura)
-
-print("El perímetro del paralelogramo es:", perimetro)
-print("El área del paralelogramo es:", area)
+        else:
+            print(f"{nombre} La figura que seleccionaste no es valida")
